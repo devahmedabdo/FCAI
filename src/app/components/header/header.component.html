@@ -1,0 +1,21 @@
+<header class="fixed w-full z-20 bg-white">
+  <div class="flex justify-between container p-2 items-center">
+    <a class="uppercase text-3xl font-bold text-blue-900" routerLink="">FCAI</a>
+    <nav class="flex  w-full items-center justify-end">
+      <ul class="menu flex  gap-6 flex-1 justify-center">
+        <li class="nav-link active home"><a href="#landing">Home</a></li>
+        <li class="nav-link benifits"><a href="#benifits">benifits</a></li>
+        <li class="nav-link how-to-use"><a href="#using">how to use</a></li>
+        <li class="nav-link about-us"><a href="#aboutUs">about us</a></li>
+        <li class="nav-link contact"><a href="#contact">contact</a></li>
+      </ul>
+      <div class="btn-primary"><a routerLink="/auth/login">Log in</a>
+      </div>
+    </nav>
+    <button id="toggeler" (click)="toggelMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

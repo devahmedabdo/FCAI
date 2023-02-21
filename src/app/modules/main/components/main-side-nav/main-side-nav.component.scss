@@ -1,0 +1,25 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  min-width: 200px;
+}
+
+.sidenav * {
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.active {
+  @apply bg-white bg-opacity-20 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20;
+}
+
+mat-nav-list {
+  @apply flex flex-col pt-0 flex-1 h-[calc(100%-64px)];
+}

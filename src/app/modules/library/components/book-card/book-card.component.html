@@ -1,0 +1,27 @@
+<button
+  *ngIf="bookData"
+  class="relative max-w-[300px] rounded-md border-2 shadow-sm flex flex-col h-full"
+  (click)="openDetailsDialog()"
+>
+  <img
+    mat-card-image
+    [src]="bookData.img"
+    [alt]="bookData.title"
+    class="w-full"
+  />
+  <div class="mb-auto p-3">
+    <h2 class="text-left text-lg font-bold text-primary">
+      {{ bookData.title }}
+    </h2>
+    <p class="my-2 text-left font-semibold text-gray-600">
+      By {{ bookData.author }}
+    </p>
+    <p class="text-left text-gray-700">Published {{ bookData.published }}</p>
+    <span
+      class="views-badge absolute -right-3 top-3 mb-auto flex select-none items-center justify-center gap-2 rounded-sm bg-accent p-3 font-semibold text-gray-700 shadow-sm"
+    >
+      <mat-icon class="text-center">remove_red_eye</mat-icon>
+      <span class="">{{ bookData.views }}</span>
+    </span>
+  </div>
+</button>

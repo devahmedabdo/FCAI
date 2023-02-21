@@ -1,0 +1,22 @@
+<div class="container p-5">
+  <announcement-swiper></announcement-swiper>
+
+  <h2 class="py-4 text-xl text-primary">Registered Courses</h2>
+  <mat-accordion multi>
+    <mat-expansion-panel *ngFor="let course of registeredCourses">
+
+      <mat-expansion-panel-header class="border-r-8 {{ course.color }} arrow-icon-color">
+        <mat-panel-title class="text-lg text-primary">{{course.title}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul class="list-disc pl-5 pt-4 text-primary">
+        <li
+          class="my-2 flex flex-wrap gap-2"
+          *ngFor="let assignment of course.assignments"
+        >
+          <a href="" class="text-primary" class="">{{ assignment.title }}:</a>
+          <span class="text-red-600">Deadline {{ assignment.deadline }}</span>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

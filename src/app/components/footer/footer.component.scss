@@ -1,0 +1,12 @@
+footer {
+  .social-link {
+    @apply flex gap-2;
+    a {
+      @apply flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-zinc-400 text-zinc-900 
+      transition-all duration-300 hover:-translate-y-2  hover:text-blue-50;
+      &:hover {
+        background-color: var(--bg-color);
+      }
+    }
+  }
+}

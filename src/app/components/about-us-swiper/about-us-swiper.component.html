@@ -1,0 +1,23 @@
+<div class="cards-content">
+  <swiper style="padding: 40px; max-width: 1200px" [config]="config">
+    <ng-template *ngFor="let card of us; let i = index" swiperSlide>
+      <div style="--d:{{ i }}" class="card dReveal">
+        <img
+          src="../../../assets/landing/{{ card.image }}"
+          alt="team-member-photo"
+        />
+        <h4>{{ card.name }}</h4>
+        <span>{{ card.job }}</span>
+        <div>
+          <a href="{{ card.github.link }}">
+            <fa-icon class="benifit-icon" [icon]="card.github.icon"></fa-icon>
+          </a>
+          <a class="delay-100" href="{{ card.linkedin.link }}">
+            <fa-icon class="benifit-icon" [icon]="card.linkedin.icon"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+  <div class="swiper-pagination"></div>
+</div>

@@ -1,0 +1,13 @@
+@use "./colors" as *;
+@use "./variables" as *;
+
+@mixin animation($time: 0.3s, $animate: all) {
+  transition: $anim $time ease-in-out;
+}
+
+/// Undo focus styles to hide it when focusing without keyboard
+@mixin undow-focus {
+  &:focus:not(:focus-visible) {
+    @content;
+  }
+}

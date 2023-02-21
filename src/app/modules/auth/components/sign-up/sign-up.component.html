@@ -1,0 +1,135 @@
+<section
+  class="container flex min-h-full w-full max-w-[550px] flex-col justify-center p-6"
+>
+  <h2 class="text-center text-4xl text-primary">Sign up</h2>
+  <div class="social-section mb-7">
+    <button
+      class="bg-gray-200 p-2 text-[#DB4437] hover:bg-[#DB4437] hover:text-white"
+    >
+      <fa-icon [icon]="faGoogle"></fa-icon>
+      <span>Sign up with Google</span>
+    </button>
+    <button
+      class="bg-gray-200 p-2 text-[#4267B2] hover:bg-[#4267B2] hover:text-white"
+    >
+      <fa-icon [icon]="faFacebook" class=""></fa-icon>
+      <span>Sign up with Facebook</span>
+    </button>
+  </div>
+
+  <div class="or"><span>or</span></div>
+
+  <form
+    class="mt-6 flex flex-col gap-2"
+    [formGroup]="signUpForm"
+    (ngSubmit)="signUp()"
+  >
+    <div class="flex flex-wrap justify-between gap-6">
+      <mat-form-field style="flex: 1" class="" appearance="outline">
+        <mat-label>First name</mat-label>
+        <input
+          matInput
+          formControlName="firstName"
+          type="text"
+          placeholder="First name"
+        />
+        <mat-error
+          *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)"
+          >First name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field style="flex: 1" class="" appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input
+          matInput
+          formControlName="lastName"
+          type="text"
+          placeholder="Last name"
+        />
+        <mat-error
+          *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)"
+          >Last name is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        type="text"
+        formControlName="username"
+      />
+      <mat-error
+        *ngIf="username?.invalid && (username?.dirty || username?.touched)"
+      >
+        Username is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        type="text"
+        formControlName="email"
+      />
+      <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        Email is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        type="password"
+        formControlName="password"
+      />
+      <mat-error
+        *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+      >
+        Password is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Confirm Password</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        type="password"
+        formControlName="confirmPassword"
+      />
+      <mat-error
+        *ngIf="
+          confirmPassword?.invalid &&
+          (confirmPassword?.dirty || confirmPassword?.touched)
+        "
+      >
+        Password is required</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      type="submit"
+      class="my-5 h-[50px] text-lg"
+      mat-flat-button
+      color="primary"
+      [disabled]="!signUpForm.valid"
+    >
+      Sign up
+    </button>
+
+    <div class="text-center text-gray-500">
+      <span>Already have an account? </span>
+      <a routerLink="/auth/login" class="text-primary hover:underline"
+        >Log in</a
+      >
+    </div>
+  </form>
+</section>

@@ -1,0 +1,46 @@
+mat-expansion-panel-header {
+  background-color: #dfe3e6;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: #e5e8ea !important;
+  }
+
+  &.red {
+    @apply border-r-red-500;
+  }
+
+  &.green {
+    @apply border-r-emerald-500;
+  }
+
+  &.blue {
+    @apply border-r-blue-500;
+  }
+
+  &.yellow {
+    @apply border-r-yellow-500;
+  }
+}
+
+a {
+  @apply relative;
+
+  &::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-primary transition-all duration-300;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      @apply w-full;
+    }
+  }
+}
+
+// change the default color of the mat-icon
+::ng-deep .arrow-icon-color > .mat-expansion-indicator:after {
+  @apply border-primary;
+}

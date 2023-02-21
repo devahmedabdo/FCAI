@@ -1,0 +1,31 @@
+.social-section {
+  @apply mt-8 flex items-center justify-center gap-5 text-2xl;
+
+  button {
+    @apply flex h-12 w-12 max-w-[300px] items-center justify-center gap-0 rounded-full transition-all duration-300 hover:flex-auto hover:gap-4;
+
+    span {
+      @apply w-0 overflow-hidden whitespace-nowrap text-lg text-white opacity-0 transition-all  duration-300;
+    }
+
+    &:hover {
+      span {
+        @apply inline w-auto opacity-100;
+      }
+    }
+  }
+}
+
+.or {
+  @apply container relative box-content text-center text-gray-500;
+
+  &::before {
+    @apply absolute left-0 -z-10 h-px w-full bg-gray-300;
+    content: "";
+    top: 50%;
+  }
+
+  span {
+    @apply bg-white px-4 uppercase;
+  }
+}

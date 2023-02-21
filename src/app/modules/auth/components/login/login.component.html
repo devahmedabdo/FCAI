@@ -1,0 +1,81 @@
+<div class="container flex h-full w-full max-w-[550px] flex-col justify-center">
+  <h2 class="text-center text-4xl text-primary">Log in</h2>
+  <div class="social-section mb-7">
+    <button
+      class="bg-gray-200 p-2 text-[#DB4437] hover:bg-[#DB4437] hover:text-white"
+    >
+      <fa-icon [icon]="faGoogle"></fa-icon>
+      <span>Login with Google</span>
+    </button>
+    <button
+      class="bg-gray-200 p-2 text-[#4267B2] hover:bg-[#4267B2] hover:text-white"
+    >
+      <fa-icon [icon]="faFacebook" class=""></fa-icon>
+      <span>Login with Facebook</span>
+    </button>
+  </div>
+
+  <div class="or"><span>or</span></div>
+
+  <form
+    class="mt-6 flex flex-col gap-2"
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        type="text"
+        formControlName="email"
+      />
+      <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        Email is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        type="password"
+        formControlName="password"
+      />
+      <mat-error
+        *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+      >
+        Password is required</mat-error
+      >
+    </mat-form-field>
+
+    <div class="flex flex-wrap justify-between gap-4">
+      <mat-checkbox color="primary" class="text-gray-500"
+        >Remember me</mat-checkbox
+      >
+      <a
+        routerLink="/auth/forget-password"
+        class="text-gray-500 transition-all hover:text-primary hover:underline"
+        >Forget password?</a
+      >
+    </div>
+
+    <button
+      type="submit"
+      class="my-5 h-[50px] text-lg"
+      mat-flat-button
+      color="primary"
+      [disabled]="!loginForm.valid"
+    >
+      Log in
+    </button>
+
+    <div class="text-center text-gray-500">
+      <span>Don't have an account? </span>
+      <a routerLink="/auth/sign-up" class="text-primary hover:underline"
+        >Sign up</a
+      >
+    </div>
+  </form>
+</div>

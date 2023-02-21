@@ -1,0 +1,16 @@
+/// @example
+/// div {
+///   z-index: nth($index, 1); // 10
+/// }
+$index: ();
+@for $i from 1 through 10 {
+  $index: append($index, $i * 10);
+}
+
+// $breakpoints: (
+//   "small": (max-width: 500px),
+//   "less-than-medium": (max-width: 800px),
+//   "medium": (min-width: 800px),
+//   "large": (min-width: 1200px),
+//   "huge": (min-width: 1500px),
+// );

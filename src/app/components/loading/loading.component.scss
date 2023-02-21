@@ -1,0 +1,48 @@
+.before {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0%;
+  content: "";
+  z-index: -1;
+  @apply bg-zinc-900 transition-all duration-500;
+}
+
+.loading {
+  &::after {
+    @apply before;
+    left: 0%;
+  }
+  &::before {
+    @apply before;
+    right: 0%;
+  }
+  span {
+    @apply relative top-0;
+    transition: 0.5s all calc(var(--d) * 0.1s);
+    animation: lighter 1s ease-in-out calc(var(--d) * 0.1s) infinite alternate;
+    @keyframes lighter {
+      0% {
+      }
+      100% {
+        color: #2563eb;
+        text-shadow: 0px 0px 9px hsla(213, 94%, 68%, 0.386),
+          0px 0px 20px #60a5fa61, 0px 0px 90px #60a5fa61;
+      }
+    }
+  }
+  &.hide {
+    z-index: -10;
+    &::after {
+      left: -100%;
+    }
+    &::before {
+      right: -100%;
+    }
+    span {
+      animation: none;
+      top: -70px;
+      opacity: 0;
+    }
+  }
+}

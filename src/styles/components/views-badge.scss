@@ -1,0 +1,16 @@
+@use "../helpers/colors" as *;
+
+.views-badge {
+  &::after {
+    content: "";
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid mix($c-cyan, black, 70%);
+
+    position: absolute;
+    z-index: -1;
+    top: 38px;
+    right: -8px;
+  }
+}

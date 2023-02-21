@@ -1,0 +1,48 @@
+// colors
+@use "../../../styles/colors.scss" as *;
+// swiper
+@import "swiper/scss";
+@import "swiper/scss/pagination";
+
+#aboutUs {
+  .cards-content {
+    @apply relative flex py-10;
+    .card {
+      @apply mx-auto max-w-[250px] overflow-hidden  rounded-md bg-gray-50 pb-10 text-center capitalize  transition-all duration-300;
+      img {
+        @apply grayscale transition-all duration-300;
+      }
+      h4 {
+        @apply pt-4 text-lg font-bold text-blue-900;
+      }
+      span {
+        @apply text-gray-500;
+      }
+      div {
+        @apply absolute   flex gap-3 opacity-0 transition-all duration-300;
+        left: 50%;
+        transform: translateX(-50%);
+        a {
+          @apply relative bottom-[-20px] transition-all duration-300;
+        }
+        fa-icon {
+          @apply text-gray-500 transition-all duration-300 hover:text-blue-500;
+        }
+      }
+
+      &:hover {
+        @apply scale-105 bg-blue-50 shadow-lg;
+        img {
+          @apply grayscale-0;
+        }
+        div {
+          opacity: 1;
+          color: $blue-500;
+          a {
+            bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

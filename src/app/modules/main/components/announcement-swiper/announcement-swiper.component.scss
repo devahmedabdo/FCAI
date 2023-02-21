@@ -1,0 +1,12 @@
+@import "swiper/scss";
+@import "swiper/scss/pagination";
+
+#announcement-swiper {
+  .swiper-pagination-bullet {
+    @apply h-2 w-2 rounded-full;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply h-2 w-2 bg-primary outline outline-2 outline-offset-2 outline-primary;
+  }
+}

@@ -1,0 +1,120 @@
+<app-loading></app-loading>
+
+<app-header></app-header>
+
+<div class="landing-component" data-goal="home" id="landing">
+  <div class="container gap-8 md:pt-20 pt-[54px] mx-auto flex flex-wrap-reverse items-center   justify-evenly ">
+
+    <div class="px-1 w-[470px] max-w-lg flex flex-col gap-3 items-start min-w-[270px]">
+      <h1 style="--d:1" class="lReveal text-5xl font-bold text-blue-900">Welcome To FCAI</h1>
+      <p style="--d:2" class="lReveal text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum,
+        voluptatibus libero,
+        laboriosam
+        reprehenderit veniam ex esse quasi, ut dolor iste architecto velit sit recusandae. Voluptatum tenetur in illo
+        consectetur fugit?</p>
+      <a style="--d:3" class="lReveal btn-primary font-semibold" routerLink="auth/sign-up">Sign Up Now</a>
+    </div>
+    <div class="rReveal w-[450px]  max-w-full landing-box relative text-center">
+      <div class="">
+      </div>
+      <img style="--d:4" class=" top-[20%] left-[40px] " src="../../../assets/landing/small-icon (5).png"
+        alt="computer science icon">
+      <img style="--d:5" class=" top-[50%] left-0 " src="../../../assets/landing/small-icon (4).png"
+        alt="computer science icon">
+      <img style="--d:6" class=" top-[80%] left-[40px]" src="../../../assets/landing/small-icon (2).png"
+        alt="computer science icon">
+      <img style="--d:7" class=" top-[80%] right-[40px]" src="../../../assets/landing/small-icon (1).png"
+        alt="computer science icon">
+      <img style="--d:8" class=" top-[50%] right-0 " src="../../../assets/landing/small-icon (3).png"
+        alt="computer science icon">
+      <img style="--d:9" class=" top-[20%] right-[40px]" src="../../../assets/landing/small-icon (6).png"
+        alt="computer science icon">
+
+    </div>
+
+  </div>
+</div>
+<div class="landing-component bg-gray-100 py-14 lg:mt-0 mt-10 " data-goal="benifits" id="benifits">
+  <div class="container">
+    <div class="title dReveal">
+      <h2>benifits</h2>
+      <span>Lorem ipsum dolor sit amet consectetur </span>
+    </div>
+    <div class="grid benifit-content columns-3 pt-10 gap-5">
+      <div style="--d:{{i}}" class="bg-white rounded relative dReveal" *ngFor="let benifit of benifits ;let i=index">
+        <h3 class="text-3xl font-bold pb-4 text-blue-900">{{benifit.title}}</h3>
+
+        <p class="text-blue-900">{{benifit.describe}}</p>
+        <fa-icon class="benifit-icon " [icon]="benifit.icon"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="landing-component py-10" data-goal="how-to-use" id="using">
+  <div class="container">
+    <div class="title dReveal">
+      <h2>How To Use</h2>
+      <span>Lorem ipsum dolor sit amet consectetur </span>
+    </div>
+    <div class="pt-8">
+      <video class="rounded-lg" controls src="../../../assets/landing/production.mp4"></video>
+    </div>
+  </div>
+</div>
+<div class="landing-component py-10" data-goal="about-us" id="aboutUs">
+  <div class="container">
+    <div class="title dReveal">
+      <h2>about us</h2>
+      <span>Lorem ipsum dolor sit amet consectetur dolor sit amet consectetur </span>
+    </div>
+  </div>
+  <about-us-swiper></about-us-swiper>
+</div>
+<div class="landing-component py-16" data-goal="contact" id="contact">
+  <div class="container">
+    <div class="title dReveal">
+      <h2>Contact</h2>
+    </div>
+    <span class="capitalize font-bold text-3xl lReveal text-blue-900 pt-5 block ">get in touch</span>
+    <div>
+
+      <form class="pt-12" [formGroup]="contactForm" (ngSubmit)="sendMessage(contactForm.value)">
+        <div>
+
+          <mat-form-field class="w-full">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com" name="email">
+            <mat-error *ngIf="formControl.email.errors?.['email'] && !formControl.email.errors?.['required']">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="formControl.email.errors?.['required']">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div>
+          <mat-form-field class="w-full">
+            <mat-label>Subject</mat-label>
+            <input type="text" matInput formControlName="subject" placeholder="Ex. HTML Course Time " name="subject">
+            <mat-error *ngIf="formControl.subject.errors?.['required']">
+              This field is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full">
+            <mat-label>Address 2</mat-label>
+            <textarea formControlName="message" matInput name="message"></textarea>
+            <mat-error *ngIf="formControl.message.errors?.['required']">
+              This field is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <button [disabled]="contactForm.invalid" class="btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,88 @@
+<div class="max-w-4xl">
+  <div class="flex items-start justify-between gap-5">
+    <h2 mat-dialog-title class="fle text-3xl font-semibold text-primary">
+      {{ data.title }}
+    </h2>
+    <span
+      class="views-badge flex w-fit select-none items-center justify-center gap-2 rounded-sm bg-accent p-3 font-semibold text-gray-700 shadow-sm"
+    >
+      <mat-icon class="text-md text-center">remove_red_eye</mat-icon>
+      <span>{{ data.views }}</span>
+    </span>
+  </div>
+  <p class="font-bold text-primary">By {{ data.author }}</p>
+  <p class="mb-5 text-primary">Published {{ data.published }}</p>
+
+  <mat-dialog-content class="mat-typography">
+    <div
+      class="dialog-content flex flex-col items-start justify-center gap-5 md:flex-row"
+    >
+      <img [src]="data.image" [alt]="data.title" class="w-full" />
+      <p class="text-justify text-base text-gray-700">
+        {{ data.description }}
+      </p>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions
+    class="mt-5 flex flex-col justify-between gap-3 md:flex-row"
+  >
+    <div
+      class="flex w-full flex-col items-center justify-between rounded-sm border-2 border-primary md:w-auto md:flex-row"
+    >
+      <span
+        class="flex w-full items-center justify-center gap-2 bg-primary p-2 text-white"
+      >
+        <mat-icon>share</mat-icon><span>Share</span>
+      </span>
+      <div class="flex">
+        <button class="m-2 w-7 text-center">
+          <img
+            src="../../../../../assets/icons/facebook-brands.svg"
+            alt="facebook"
+          />
+        </button>
+        <button class="m-2 w-7 text-center">
+          <img
+            src="../../../../../assets/icons/twitter-brands.svg"
+            alt="twitter"
+          />
+        </button>
+        <button class="m-2 w-7 text-center">
+          <img
+            src="../../../../../assets/icons/whatsapp-brands.svg"
+            alt="whatsapp"
+          />
+        </button>
+        <button class="m-2 w-7 text-center">
+          <img
+            src="../../../../../assets/icons/instagram-brands.svg"
+            alt="instagram"
+          />
+        </button>
+        <button class="m-2 w-7 text-center">
+          <img
+            src="../../../../../assets/icons/telegram-brands.svg"
+            alt="telegram"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="flex w-full justify-between md:w-auto">
+      <button mat-stroked-button color="primary" [mat-dialog-close]="false">
+        <mat-icon>close</mat-icon>
+        Close
+      </button>
+      <button
+        mat-flat-button
+        [mat-dialog-close]="true"
+        color="primary"
+        class="flex-1"
+      >
+        <mat-icon>download</mat-icon>
+        Download
+      </button>
+    </div>
+  </mat-dialog-actions>
+</div>
