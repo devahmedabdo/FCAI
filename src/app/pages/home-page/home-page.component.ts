@@ -70,6 +70,7 @@ export class HomePageComponent implements OnInit {
   // }
   ngOnInit(): void {
     window.addEventListener('load', () => {
+      console.log(2);
       document.querySelector('.loading')?.classList.add('hide');
       document
         .querySelectorAll('#landing *.lReveal , #landing *.rReveal')
