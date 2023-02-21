@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {
   faBullhorn,
@@ -14,7 +14,7 @@ import {
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent implements AfterViewInit {
+export class HomePageComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   benifits: any = [
@@ -64,13 +64,18 @@ export class HomePageComponent implements AfterViewInit {
   sendMessage(value: any) {
     console.log(value);
   }
-  ngAfterViewInit(): void {
-    setTimeout(() => {
+  // ngAfterViewInit(): void {
+  //   setTimeout(() => {
+  //   }, 400);
+  // }
+  ngOnInit(): void {
+    window.addEventListener('load', () => {
+      document.querySelector('.loading')?.classList.add('hide');
       document
         .querySelectorAll('#landing *.lReveal , #landing *.rReveal')
         .forEach((e) => {
           e.classList.add('reveal');
         });
-    }, 400);
+    });
   }
 }

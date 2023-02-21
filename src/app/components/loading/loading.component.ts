@@ -5,9 +5,9 @@ import { Component, OnDestroy, OnInit, AfterViewInit } from '@angular/core';
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],
 })
-export class LoadingComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
-    document.querySelector('.loading')?.classList.add('hide');
-  }
+export class LoadingComponent     {
+  // ngAfterViewInit(): void {
+  //   console.log('ngAfterViewInit');
+  
+  // }
 }
